@@ -536,6 +536,7 @@ with tabs[-1]:
             if info:
                 st.markdown(f"**Water Temperature Range:** {info['temp_range']}")
                 st.markdown(f"**Dates:** {info['dates']}")
+                st.markdown(f"**Weight Range:** {info['weight_range']}")
                 st.markdown(f"**Behavior:** {info['behavior']}")
                 st.markdown("**Recommended Tactics:**")
                 st.table(pd.DataFrame(info["table"]))
