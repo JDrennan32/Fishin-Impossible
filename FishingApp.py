@@ -8,7 +8,7 @@ st.set_page_config(page_title="Fishin' Impossible", layout="wide")
 st.title("Fishin' Impossible")
 
 # Fish categories including new Cheat Sheets tab
-fish_names = ["Largemouth", "Smallmouth", "Bluegill", "Crappie", "Catfish"]
+fish_names = ["Largemouth", "Smallmouth", "Bluegill", "Crappie", "Channel Catfish"]
 tabs = st.tabs(fish_names + ["Cheat Sheets"])
 
 # Cheat sheet content data structure
@@ -17,6 +17,7 @@ cheat_data = {
         "Pre-Spawn": {
             "temp_range": "45–58°F",
             "dates": "Late February – Early April",
+            "weight_range": "3.5-5.0 lbs",
             "behavior": (
                 "Pre-spawn largemouth are feeding aggressively as they prepare to spawn. "
                 "They're moving from deeper wintering holes toward shallower spawning flats. During this phase, "
@@ -37,6 +38,7 @@ cheat_data = {
         "Spawn": {
             "temp_range": "58–72°F",
             "dates": "Late March – May",
+            "weight_range": "3.0-4.5 lbs",
             "behavior": (
                 "During the spawn, largemouth bass move into shallow, protected areas to build nests and lay eggs. "
                 "They become territorial and aggressive, especially the males guarding the beds. "
@@ -55,6 +57,7 @@ cheat_data = {
         "Post-Spawn": {
             "temp_range": "65–78°F",
             "dates": "Mid April – June",
+            "weight_range": "2.0-3.5 lbs",
             "behavior": (
                 "After the spawn, male bass remain on beds for a short period to protect fry, while females recover in nearby cover. "
                 "Many bass suspend or move toward the first drop-offs and weed lines. This period is transitional — fish behavior can be inconsistent. "
@@ -72,6 +75,7 @@ cheat_data = {
         "Summer": {
             "temp_range": "75–90°F",
             "dates": "June – August",
+            "weight_range": "2.0-3.2 lbs",
             "behavior": (
                 "During the summer, largemouth bass are less active during the heat of the day and feed more aggressively in low-light hours. "
                 "In lakes and ponds, they tend to relate to deeper structure, vegetation edges, and shaded areas. "
@@ -87,9 +91,10 @@ cheat_data = {
             ],
             "target_depth": "Lake/Pond: 5–12 ft, River: 3–8 ft"
         },
-                "Fall": {
+        "Fall": {
             "temp_range": "65–55°F",
             "dates": "September – Mid-November",
+            "weight_range": "2.8-4.0 lbs",
             "behavior": (
                 "In the fall, largemouth bass feed heavily to prepare for the coming winter. They often chase baitfish that migrate toward creeks, flats, and shallow coves. "
                 "Water temperatures are cooling, and bass become more active throughout the day, especially in shallower areas during overcast conditions. "
@@ -107,6 +112,7 @@ cheat_data = {
         "Winter": {
             "temp_range": "45–55°F",
             "dates": "Mid-November – February",
+            "weight_range": "2.0-3.0 lbs",
             "behavior": (
                 "Largemouth bass become sluggish in the cold of winter and conserve energy by staying near deep cover. "
                 "They often group up in deeper holes, channels, and ledges where water temperatures are more stable. "
@@ -128,6 +134,7 @@ cheat_data = {
         "Spring": {
             "temp_range": "55–68°F",
             "dates": "March – April",
+            "weight_range": "0.6-1.0 lbs",
             "behavior": (
                 "In spring, bluegill begin moving out of deep wintering holes and transition toward shallower areas as water temperatures rise. "
                 "They feed actively in preparation for the spawn, targeting insects, small minnows, and worms. "
@@ -147,6 +154,7 @@ cheat_data = {
         "Spawn": {
             "temp_range": "70–85°F",
             "dates": "May – July",
+            "weight_range": "0.8-1.2 lbs",
             "behavior": (
                 "During the spawn, bluegill move into shallow, sandy, or gravel-bottomed areas to build beds in colonies. "
                 "They’re highly aggressive during this time, guarding nests from predators and striking at anything nearby. "
@@ -165,6 +173,7 @@ cheat_data = {
         "Post-Spawn": {
             "temp_range": "80–85°F",
             "dates": "July – Early August",
+            "weight_range": "0.5-0.8 lbs",
             "behavior": (
                 "After spawning, bluegill gradually disperse from their beds and seek refuge in nearby cover. "
                 "They often suspend around deeper weed edges, submerged timber, and shaded structures. "
@@ -184,6 +193,7 @@ cheat_data = {
         "Summer": {
             "temp_range": "85–90°F",
             "dates": "Mid August – Mid September",
+            "weight_range": "0.6-0.9 lbs",
             "behavior": (
                 "During the peak of summer, bluegill retreat to deeper, cooler waters during midday, becoming most active in the early morning and evening. "
                 "They often school around submerged structure, dock pilings, and weed edges where oxygen levels are stable. "
@@ -202,6 +212,7 @@ cheat_data = {
         "Fall": {
             "temp_range": "60–70°F",
             "dates": "Late September – Early November",
+            "weight_range": "0.7-1.0 lbs",
             "behavior": (
                 "In the fall, bluegill become active again as water temperatures cool and oxygen levels stabilize. "
                 "They feed heavily in preparation for winter, often forming loose schools around deeper vegetation, drop-offs, and structure. "
@@ -220,6 +231,7 @@ cheat_data = {
         "Winter": {
             "temp_range": "45–50°F",
             "dates": "Mid November – February",
+            "weight_range": "0.5-0.8 lbs",
             "behavior": (
                 "In winter, bluegill slow down significantly and concentrate in deeper, more stable parts of the water. "
                 "They often school tightly near the bottom or suspend over structure like brush piles, humps, or creek channels. "
@@ -235,6 +247,145 @@ cheat_data = {
             ],
             "target_depth": "Lake/Pond: 8–15 ft, River: 5–10 ft"
         }
+    },
+    "Crappie": {
+        "Pre-Spawn": {
+            "temp_range": "48–55°F",
+            "dates": "Late February – Early March",
+            "weight_range": "1.0–1.5 lbs",
+            "behavior": (
+                "Pre-spawn crappie stage just outside their eventual spawning areas, typically in slightly deeper water near brush piles, "
+                "drop-offs, and creek channels. They begin feeding actively as water temperatures warm, preparing to move shallow. "
+                "Fish tend to concentrate in schools and may suspend near vertical structure or hold tight to cover. "
+                "Cold fronts can push them deeper temporarily, so timing and stable conditions are key. "
+                "Late afternoons and sunny days often bring fish closer to shallow staging areas."
+            ),
+            "table": [
+                {"Bait": "Marabou jig", "Retrieval Style": "Slow vertical jigging", "Colors": "Black/chartreuse, White", "Best Location": "Brush piles off spawning flats (Lake)"},
+                {"Bait": "Small tube jig", "Retrieval Style": "Lift-fall with pause", "Colors": "Pink/white, Chartreuse", "Best Location": "Drop-offs near creek mouths (Pond)"},
+                {"Bait": "Minnow under slip bobber", "Retrieval Style": "Still or slow drift", "Colors": "Live minnow", "Best Location": "Suspended near submerged timber (Lake)"},
+                {"Bait": "Blade bait", "Retrieval Style": "Lift and fall near structure", "Colors": "Silver, Chrome", "Best Location": "Channel edges and ledges (River)"},
+                {"Bait": "Crappie crankbait", "Retrieval Style": "Slow steady retrieve", "Colors": "Shad, Firetiger", "Best Location": "Staging points near spawning coves (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 6–12 ft, River: 4–8 ft"
+        },
+        "Spawn": {
+            "temp_range": "56–68°F",
+            "dates": "Mid March – Late April",
+            "weight_range": "1.2–1.8 lbs",
+            "behavior": (
+                "During the spawn, crappie move into shallow protected areas to lay eggs, often in less than 5 feet of water. "
+                "Males fan out nests and guard them, while females move in briefly to deposit eggs. "
+                "Crappie become highly concentrated and aggressive in spawning coves, near submerged wood, and around shoreline vegetation. "
+                "They are easier to target in clear water where beds are visible. Wind-protected pockets with warmer water tend to hold the most fish."
+            ),
+            "table": [
+                {"Bait": "Tube jig", "Retrieval Style": "Pitch and pause", "Colors": "Chartreuse, White", "Best Location": "Shallow brush and stake beds (Lake)"},
+                {"Bait": "Minnow under float", "Retrieval Style": "Set and twitch", "Colors": "Live minnow", "Best Location": "Grassy banks and timber edges (Pond)"},
+                {"Bait": "Hair jig", "Retrieval Style": "Slow swim or hop", "Colors": "Black, Pink", "Best Location": "Shallow spawning pockets (Lake)"},
+                {"Bait": "Beetle spin", "Retrieval Style": "Steady retrieve", "Colors": "White/chartreuse, Yellow", "Best Location": "Flat gravel points and creek arms (Pond/Lake)"},
+                {"Bait": "Tiny swimbait", "Retrieval Style": "Glide over beds", "Colors": "Silver flake, Pearl", "Best Location": "Sandy bottoms near cover (River)"}
+            ],
+            "target_depth": "Lake/Pond: 2–5 ft, River: 2–6 ft"
+        },
+        "Post-Spawn": {
+            "temp_range": "69–75°F",
+            "dates": "Late April – May",
+            "weight_range": "1.0–1.6 lbs",
+            "behavior": (
+                "After the spawn, crappie begin to disperse from shallow nesting areas and move toward slightly deeper cover. "
+                "Males may linger briefly to guard fry, but most fish return to submerged brush, timber, or weed edges. "
+                "Feeding behavior can be inconsistent as fish recover from spawning, but action improves with warming temperatures. "
+                "Look for crappie to suspend off structure or stack up along channel breaks and deeper transitions. "
+                "Late evenings and early mornings often produce the best bite windows."
+            ),
+            "table": [
+                {"Bait": "Small swimbait", "Retrieval Style": "Slow roll near cover", "Colors": "Silver flake, Shad", "Best Location": "Submerged brush piles near spawning flats (Lake)"},
+                {"Bait": "Minnow under slip bobber", "Retrieval Style": "Still or twitch", "Colors": "Live minnow", "Best Location": "Weed edges near deeper drop-offs (Pond)"},
+                {"Bait": "Hair jig", "Retrieval Style": "Lift-fall in open pockets", "Colors": "Black, Chartreuse", "Best Location": "Ledges and timber lines (Lake)"},
+                {"Bait": "Blade bait", "Retrieval Style": "Hop along bottom", "Colors": "Gold, Chrome", "Best Location": "Mid-depth channel edges (River)"},
+                {"Bait": "Tube jig", "Retrieval Style": "Bounce off structure", "Colors": "Pink/white, Green pumpkin", "Best Location": "Deeper coves with isolated cover (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 6–14 ft, River: 4–10 ft"
+        },
+        "Early Summer": {
+            "temp_range": "76–81°F",
+            "dates": "June – Early July",
+            "weight_range": "1.1–1.7 lbs",
+            "behavior": (
+                "As summer begins, crappie move away from spawning areas and settle into deeper, cooler zones with nearby structure. "
+                "They often suspend over submerged brush, ledges, and drop-offs, particularly where there's shade or temperature stability. "
+                "Crappie feed early and late in the day, becoming more sluggish under direct sun. "
+                "Targeting them vertically or with slow presentations around structure is key during this season. "
+                "In rivers, they shift toward deeper eddies and slow-moving current edges."
+            ),
+            "table": [
+                {"Bait": "Hair jig", "Retrieval Style": "Vertical twitch and drop", "Colors": "Black/chartreuse, Pink", "Best Location": "Submerged timber in coves (Lake)"},
+                {"Bait": "Minnow under slip bobber", "Retrieval Style": "Hover over brush", "Colors": "Live minnow", "Best Location": "Shaded cover near drop-offs (Pond)"},
+                {"Bait": "Tube jig", "Retrieval Style": "Lift-fall along ledges", "Colors": "Chartreuse, White", "Best Location": "Channel swings and brush piles (Lake)"},
+                {"Bait": "Blade bait", "Retrieval Style": "Jigged through current breaks", "Colors": "Silver, Gold", "Best Location": "Deep pools and rock ledges (River)"},
+                {"Bait": "Small crankbait", "Retrieval Style": "Slow crank at mid-depth", "Colors": "Shad, Pearl", "Best Location": "Deeper flats with scattered cover (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 8–15 ft, River: 6–10 ft"
+        },
+        "Late Summer": {
+            "temp_range": "76–85°F",
+            "dates": "Mid July – August",
+            "weight_range": "1.0–1.6 lbs",
+            "behavior": (
+                "In late summer, crappie often hold deeper during the heat of the day, especially around structure like submerged timber, bridge pilings, and drop-offs. "
+                "They can be more scattered and less aggressive, so vertical presentations and precision targeting become important. "
+                "Look for early morning and late evening windows when crappie suspend higher in the water column to feed. "
+                "In rivers, they concentrate in deeper eddies and slower-moving channels with available cover."
+            ),
+            "table": [
+                {"Bait": "Tube jig", "Retrieval Style": "Slow lift-fall", "Colors": "Chartreuse, White", "Best Location": "Timber lines near deeper flats (Lake)"},
+                {"Bait": "Minnow under slip bobber", "Retrieval Style": "Still or drift", "Colors": "Live minnow", "Best Location": "Shade near structure (Pond)"},
+                {"Bait": "Hair jig", "Retrieval Style": "Subtle twitch", "Colors": "Black, Pink", "Best Location": "Brush piles and ledges (Lake)"},
+                {"Bait": "Blade bait", "Retrieval Style": "Vertical jigging", "Colors": "Gold, Silver", "Best Location": "River channels and drop-offs (River)"},
+                {"Bait": "Small crankbait", "Retrieval Style": "Mid-depth steady retrieve", "Colors": "Firetiger, Shad", "Best Location": "Deep weed edges and coves (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 10–18 ft, River: 6–12 ft"
+        },
+        "Fall": {
+            "temp_range": "60–70°F",
+            "dates": "September – Early November",
+            "weight_range": "1.2–1.7 lbs",
+            "behavior": (
+                "In fall, crappie feed heavily in preparation for winter, often chasing schools of baitfish into shallower water. "
+                "They become more active throughout the day, especially during stable weather and wind-blown banks. "
+                "Fish can be found transitioning between shallow flats and nearby deep cover like brush piles, docks, and ledges. "
+                "Expect crappie to suspend more frequently and follow bait movement, particularly in lakes and ponds. "
+                "In rivers, focus on deeper bends and eddies with access to nearby feeding zones."
+            ),
+            "table": [
+                {"Bait": "Crappie jig", "Retrieval Style": "Cast and pendulum swing", "Colors": "Chartreuse, White", "Best Location": "Brush piles near flats (Lake)"},
+                {"Bait": "Minnow under bobber", "Retrieval Style": "Slow drift with twitch", "Colors": "Live minnow", "Best Location": "Windy banks near structure (Pond)"},
+                {"Bait": "Small crankbait", "Retrieval Style": "Mid-speed retrieve with pauses", "Colors": "Shad, Firetiger", "Best Location": "Transition zones and docks (Lake)"},
+                {"Bait": "Tube jig", "Retrieval Style": "Hop across bottom", "Colors": "Pink, Smoke", "Best Location": "Deeper flats and bends (River)"},
+                {"Bait": "Hair jig", "Retrieval Style": "Lift-fall near suspended schools", "Colors": "Black, Yellow", "Best Location": "Drop-offs near feeding grounds (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 6–12 ft, River: 5–10 ft"
+        },
+        "Winter": {
+            "temp_range": "38–55°F",
+            "dates": "November – February",
+            "weight_range": "1.0–1.4 lbs",
+            "behavior": (
+                "In winter, crappie concentrate in the deepest parts of lakes, ponds, and rivers where water temperatures are most stable. "
+                "They often form tight schools and suspend just above the bottom or around vertical cover like timber or bridge pilings. "
+                "Feeding activity slows, with short bite windows usually occurring during the warmest part of the day. "
+                "Precise vertical presentations and subtle movement are critical. In rivers, target deep eddies, pools, and the slow side of current seams."
+            ),
+            "table": [
+                {"Bait": "Hair jig", "Retrieval Style": "Slow vertical twitch", "Colors": "Black, Purple", "Best Location": "Deep timber and ledges (Lake)"},
+                {"Bait": "Minnow on ice jig", "Retrieval Style": "Deadstick or slight lift", "Colors": "Live minnow", "Best Location": "Near bottom over brush piles (Pond)"},
+                {"Bait": "Tungsten jig with plastic", "Retrieval Style": "Lift-drop with long pauses", "Colors": "Chartreuse, White", "Best Location": "Deep basin structure (Lake)"},
+                {"Bait": "Blade bait", "Retrieval Style": "Short hops on bottom", "Colors": "Silver, Chrome", "Best Location": "Slow current holes and ledges (River)"},
+                {"Bait": "Micro tube jig", "Retrieval Style": "Hover or pendulum swing", "Colors": "Pink, Glow", "Best Location": "Staging areas near channels (Pond/Lake)"}
+            ],
+            "target_depth": "Lake/Pond: 12–25 ft, River: 8–15 ft"
+        }
     }
 }
 
@@ -243,8 +394,8 @@ season_options_dict = {
     "Largemouth": ["Select...", "Pre-Spawn", "Spawn", "Post-Spawn", "Summer", "Fall", "Winter"],
     "Smallmouth": ["Select...", "Early Spring", "Spawn", "Late Summer", "Fall"],
     "Bluegill": ["Select...", "Spring", "Spawn", "Post-Spawn", "Summer", "Fall", "Winter"],
-    "Crappie": ["Select...", "Pre-Spawn", "Spawn", "Post-Spawn", "Fall"],
-    "Catfish": ["Select...", "Spring", "Summer", "Fall", "Winter"]
+    "Crappie": ["Select...", "Pre-Spawn", "Spawn", "Post-Spawn", "Early Summer", "Late Summer", "Fall", "Winter"],
+    "Channel Catfish": ["Select...", "Spring", "Summer", "Fall", "Winter"]
 }
 
 # Water temperature options based on fish and season
@@ -272,12 +423,15 @@ water_temp_options_dict = {
         "Winter": ["Cold (38-50F)"]
     },
     "Crappie": {
-        "Pre-Spawn": ["Cool (50-58F)"],
-        "Spawn": ["Mild (58-65F)"],
-        "Post-Spawn": ["Warm (65-75F)"],
-        "Fall": ["Cool (55-65F)"]
+        "Pre-Spawn": ["Cold (48-51F)", "Mild (52-55F)"],
+        "Spawn": ["Mild (56-65F)", "Warm (66-68F)"],
+        "Post-Spawn": ["Warm (69-72F)", "Hot (73-75F)"],
+        "Early Summer": ["Hot (76-78F)", "Very Hot (79-81F)"],
+        "Late Summer": ["Hot (76-85F)", "Warm (66-75F)"],
+        "Fall": ["Mild (66-70F)", "Cool (60-65F)"],
+        "Winter": ["Cold (50-55F)", "Very Cold (38-49F)"]
     },
-    "Catfish": {
+    "Channel Catfish": {
         "Spring": ["Moderate (60-70F)"],
         "Summer": ["Warm (75-85F)"],
         "Fall": ["Cool (65-75F)"],
@@ -290,7 +444,7 @@ weather_options = ["Select...", "Sunny", "Cloudy", "Windy", "Rainy", "After Rain
 time_of_day_options = ["Select...", "Morning", "Afternoon", "Evening"]
 waterbody_type_options = ["Select...", "Lake", "Pond", "River"]
 
-# Load data for Largemouth and Bluegill
+# Load data for Largemouth, Bluegill, and Crappie
 @st.cache_data
 def load_largemouth_data():
     df = pd.read_csv("Data/Largemouth_AllSeasons.csv", encoding="cp1252")
@@ -305,8 +459,16 @@ def load_bluegill_data():
     df = df.apply(lambda col: col.str.replace("\u00a0", " ", regex=False).str.strip() if col.dtypes == "object" else col)
     return df
 
+@st.cache_data
+def load_crappie_data():
+    df = pd.read_csv("Data/Crappie_AllSeasons.csv", encoding="cp1252")
+    df.columns = df.columns.str.strip()
+    df = df.apply(lambda col: col.str.replace("\u00a0", " ", regex=False).str.strip() if col.dtypes == "object" else col)
+    return df
+
 largemouth_data = load_largemouth_data()
 bluegill_data = load_bluegill_data()
+crappie_data = load_crappie_data()
 
 def condition_selectors(fish, season_options_custom):
     season_key = f"{fish}_season_v2"
@@ -332,6 +494,8 @@ def condition_selectors(fish, season_options_custom):
             data = largemouth_data
         elif fish == "Bluegill":
             data = bluegill_data
+        elif fish == "Crappie":
+            data = crappie_data
 
         if data is not None:
             filtered = data[
@@ -378,3 +542,4 @@ with tabs[-1]:
                 st.markdown(f"**Target Depth:** {info['target_depth']}")
             else:
                 st.info("Cheat sheet not available yet for this selection.")
+
