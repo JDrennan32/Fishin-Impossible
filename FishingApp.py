@@ -389,6 +389,33 @@ cheat_data = {
     }
 }
 
+hook_sizes = {
+    "Largemouth": {
+        "range": "#2/0 to #5/0",
+        "details": [
+            "#2/0 to #3/0 for finesse baits",
+            "#4/0 to #5/0 for large plastics or heavy cover"
+        ],
+        "types": "EWG hooks, offset worm hooks, flipping hooks"
+    },
+    "Bluegill": {
+        "range": "#6 to #10",
+        "details": [
+            "#8 to #10 for live bait like worms or crickets",
+            "#6 for larger bluegill or jigs"
+        ],
+        "types": "Aberdeen hooks, long shank hooks, small jigheads"
+    },
+    "Crappie": {
+        "range": "#2 to #6",
+        "details": [
+            "#4 to #6 for minnows or small plastics",
+            "#2 for large crappie or deeper water"
+        ],
+        "types": "Aberdeen hooks, sickle hooks, light wire jigheads"
+    }
+}
+
 # Corrected Dropdown options for Seasons
 season_options_dict = {
     "Largemouth": ["Select...", "Pre-Spawn", "Spawn", "Post-Spawn", "Summer", "Fall", "Winter"],
@@ -541,6 +568,15 @@ with tabs[-1]:
                 st.markdown("**Recommended Tactics:**")
                 st.table(pd.DataFrame(info["table"]))
                 st.markdown(f"**Target Depth:** {info['target_depth']}")
+
+                # Hook size reference
+                hook_info = hook_sizes.get(selected_fish)
+                if hook_info:
+                    st.markdown(f"**Hook Size Range:** {hook_info['range']}")
+                    st.markdown("**Details:**")
+                    for item in hook_info["details"]:
+                        st.markdown(f"- {item}")
+                    st.markdown(f"**Common Hook Types:** {hook_info['types']}")
             else:
                 st.info("Cheat sheet not available yet for this selection.")
 
